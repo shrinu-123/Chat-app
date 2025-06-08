@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
-import AuthImagePattern from "../components/AuthImagePattern";
-import { Links } from "react-router-dom";
+import AuthImagePattern from "../components/AuthimagePattern";
+import { Link } from "react-router-dom";
 import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare } from "lucide-react";
 
 const LoginPage = () => {
@@ -100,9 +100,9 @@ const LoginPage = () => {
           <div className="text-center">
             <p className="text-base-content/60">
               Don&apos;t have an account?{" "}
-              <Links to="/signup" className="link link-primary">
+              <Link to="/signup" className="link link-primary">
                 Create account
-              </Links>
+              </Link>
             </p>
           </div>
         </div>
