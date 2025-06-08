@@ -3,7 +3,7 @@ import { generateToken } from "../lib/utils.js";
 import User from "../models/user.model.js"
 import bcrypt from "bcryptjs"
 
-export const Signup = async(req,res) => {
+export const signup = async(req,res) => {
     const {fullName,email,password}= req.body;
     try{
         if(!fullName || !email || !password){
@@ -48,7 +48,7 @@ export const Signup = async(req,res) => {
     }
 };
 
-export const Login = async(req,res) => {
+export const login = async(req,res) => {
    const{email, password } = req.body;
   try{
     const user = await User.findOne({email});
@@ -73,7 +73,7 @@ export const Login = async(req,res) => {
  }
 };
 
-export const Logout = (req,res) => {
+export const logout = (req,res) => {
     try{
       res.cookie("jwt", "",{maxAge :0});{
         res.status(200).json({message:"Logout successful"});
